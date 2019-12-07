@@ -1,0 +1,89 @@
+$black: #1C2022;
+$white: #fff;
+$sky: #61DAFB;
+$pink: #EB3F7A;
+
+html, body, body * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "helvetica"
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: block;
+  font-family: sans-serif;
+  background: $black;
+  color: #fff;
+  padding: 20px;
+
+  h1 {
+    text-align: left;
+    padding: 0 0 20px 0;
+    font-weight: 100;
+  }
+}
+
+.calculator {
+  border: 1px solid $sky;
+  color: $sky;
+  width: 200px;
+
+  & * {
+    border: 1px solid $sky;
+  }
+
+  &__display {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    p {
+      border: none;
+      display: block;
+    }
+  }
+
+  &__row {
+    height: 50px;
+    display: flex;
+
+    button {
+      height: 50px;
+      cursor: pointer;
+
+      &:hover {
+        background: darken($white, 10%);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-btn {
+      width: 50px;
+    }
+
+    &-clear {
+      width: 150px;
+      background: $pink;
+      color: $white;
+
+      &:hover {
+        background: darken($pink, 10%) !important;
+      }
+    }
+
+    &-zero {
+      width: 100px;
+    }
+  }
+}
